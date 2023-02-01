@@ -14,7 +14,7 @@ export function Home() {
       <SearchForm />
       <PostList>
         {posts.map((post) => {
-          return <Post key={post.number} postId={post.number} />
+          return <Post key={post.number} post={post} />
         })}
       </PostList>
     </HomeContainer>

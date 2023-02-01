@@ -25,6 +25,8 @@ export const SearchFormContainer = styled.div`
   form {
     width: 100%;
     padding: 0.75rem 0;
+    display: flex;
+    gap: 1rem;
   }
 
   input {

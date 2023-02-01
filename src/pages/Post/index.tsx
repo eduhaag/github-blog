@@ -32,8 +32,12 @@ export function Post() {
 
   return (
     <PostContainer>
-      <PostHeader post={post!} />
-      <PostContent children={post!.body} />
+      {post && (
+        <PostContainer>
+          <PostHeader post={post!} />
+          <PostContent children={post!.body} />
+        </PostContainer>
+      )}
     </PostContainer>
   )
 }

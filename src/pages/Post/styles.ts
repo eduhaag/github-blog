@@ -5,6 +5,6 @@ export const PostContainer = styled.article`
   flex-direction: column;
   justify-content: center;
   max-width: 54rem;
-  margin-top: -6.625rem;
+  margin-top: -2.625rem;
   width: 100%;
 `

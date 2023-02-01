@@ -7,19 +7,10 @@ import { IPost, PostsContext } from '../../../../context/PostsContext'
 import { PostContainer } from './styles'
 
 interface PostProps {
-  postId: number
+  post: IPost
 }
 
-export function Post({ postId }: PostProps) {
-  const { posts } = useContext(PostsContext)
-  const [post, setPost] = useState<IPost>()
-
-  useEffect(() => {
-    const findPost = posts.find((item) => item.number === postId)
-
-    setPost(findPost)
-  }, [postId, posts])
-
+export function Post({ post }: PostProps) {
   const timeDistanceToNow = formatDistanceToNow(new Date(post!.created_at), {
     addSuffix: true,
     locale: ptBR,

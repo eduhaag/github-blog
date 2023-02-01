@@ -6,6 +6,7 @@ export const HomeContainer = styled.main`
   justify-content: center;
   max-width: 54rem;
   margin-top: -6.625rem;
+  width: 100%;
 `
 
 export const PostList = styled.section`

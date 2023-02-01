@@ -16,6 +16,7 @@ export interface IPost {
 
 interface PostsContextType {
   posts: IPost[]
+  fetchPosts: (query?: string) => {}
 }
 
 interface PostsProviderProps {
@@ -27,10 +28,10 @@ export const PostsContext = createContext({} as PostsContextType)
 export function PostsProvider({ children }: PostsProviderProps) {
   const [posts, setPosts] = useState<IPost[]>([])
 
-  const fetchPosts = useCallback(async (query?: string) => {
+  const fetchPosts = useCallback(async (query = '') => {
     const response = await api.get('/search/issues', {
       params: {
-        q: `repo:eduhaag/github-blog`,
+        q: `repo:eduhaag/github-blog ${query}`,
       },
     })
     setPosts(response.data.items)
@@ -41,6 +42,8 @@ export function PostsProvider({ children }: PostsProviderProps) {
   }, [fetchPosts])
 
   return (
-    <PostsContext.Provider value={{ posts }}>{children}</PostsContext.Provider>
+    <PostsContext.Provider value={{ posts, fetchPosts }}>
+      {children}
+    </PostsContext.Provider>
   )
 }
