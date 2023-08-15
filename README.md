@@ -77,7 +77,7 @@ $ npm run dev
 - **[react-markdown](https://remarkjs.github.io/react-markdown/)** - Manipulação de texto em markdown;
 - **[react-sintax-highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)** - Biblioteca para formação de código dentro do markdown;
 - **[Zod](https://zod.dev/)** - Biblioteca para válidação de esquemas de dados.
-> Veja o arquivo [package.json](https://github.com/eduhaag/Memoteca/package.json)
+> Veja o arquivo [package.json](package.json)
 
 
 **Utilitários**
